@@ -1,0 +1,20 @@
+= Google Search Keyboard Shortcuts
+A chrome extension that enables keyboard shortcuts for navigating Google search results.  This
+extension mimics the functionality of the old Google keyboard shortcuts experiment that has
+been discontinued.
+
+The following keyboard shortcuts are defined:
+j::             Move to next search result
+k::             Move to previous search result
+/ or <escape>:: Focus the search box
+<enter>::       Navigate to selected search result
+
+
+== TODO (unprioritized)
+* Add help overlay.
+* Add configuration screen to customize keystrokes, colors, etc.
+* Support other types of searchs (image search, video search, etc.)
+* Detect if instant is enabled and if so don't run.
+* Allow selection and navigation of ads.
+* If you hit next on the last item of a page or prev on the first item of a page switch pages?
+* What to do when the search button has focus and movement happens or enter/esc is pushed?

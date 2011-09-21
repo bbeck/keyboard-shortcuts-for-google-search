@@ -1,0 +1,17 @@
+{
+  "name": "Google Search Keyboard Shortcuts",
+  "version": "0.1",
+  "description": "Adds keyboard shortcuts to Google search result pages.",
+
+  "content_scripts": [
+    {
+      "matches": ["http://www.google.com/search*"],
+      "js": [
+        "lib/jquery-1.6.4.min.js",
+        "js/logging.js",
+        "js/scrolling.js",
+        "js/extension.js"
+      ]
+    }
+  ]
+}
