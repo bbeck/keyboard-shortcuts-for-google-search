@@ -7,7 +7,7 @@ The following keyboard shortcuts are defined:
 j::             Move to next search result
 k::             Move to previous search result
 / or <escape>:: Focus the search box
-<enter>::       Navigate to selected search result
+<enter>::       Navigate to the selected search result
 
 
 == TODO (unprioritized)
@@ -18,3 +18,4 @@ k::             Move to previous search result
 * Allow selection and navigation of ads.
 * If you hit next on the last item of a page or prev on the first item of a page switch pages?
 * What to do when the search button has focus and movement happens or enter/esc is pushed?
+* Add Google Analytics tracking to better understand the size of the userbase.
