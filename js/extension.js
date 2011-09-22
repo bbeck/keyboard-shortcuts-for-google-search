@@ -53,6 +53,32 @@ var doPrevSearchResult = function() {
   }
 };
 
+var doNextSearchPage = function() {
+  var currentPage = parseInt($("#navcnt td.cur").text());
+  var nextPage = currentPage + 1;
+  
+  var link = $("#navcnt td a").filter(function(index) {
+    return parseInt($(this).text()) === nextPage;
+  });
+  
+  if (link.length) {
+    window.location.href = link.attr("href");
+  }
+};
+
+var doPrevSearchPage = function() {
+  var currentPage = parseInt($("#navcnt td.cur").text());
+  var nextPage = currentPage - 1;
+  
+  var link = $("#navcnt td a").filter(function(index) {
+    return parseInt($(this).text()) === nextPage;
+  });
+  
+  if (link.length) {
+    window.location.href = link.attr("href");
+  }
+};
+
 /** Give the search box focus. */
 var doFocusSearchBox = function() {
   var searchBox = $("input[title=Search]:first");
@@ -170,6 +196,18 @@ var keypressHandler = function(event) {
   // k or K
   if (event.which == 75 || event.which == 107) {
     doPrevSearchResult();
+    return;
+  }
+  
+  // n or N
+  if (event.which == 78 || event.which == 110) {
+    doNextSearchPage();
+    return;
+  }
+  
+  // p or P
+  if (event.which == 80 || event.which == 112) {
+    doPrevSearchPage();
     return;
   }
 };
