@@ -4,11 +4,13 @@ extension mimics the functionality of the old Google keyboard shortcuts experime
 been discontinued.
 
 The following keyboard shortcuts are defined:
-j::             Move to next search result
-k::             Move to previous search result
+j or J::        Move to next search result
+k or K::        Move to previous search result
+n or N::        Move to the next page of results
+p or P::        Move to the previous page of results
 / or <escape>:: Focus the search box
 <enter>::       Navigate to the selected search result
-
+?::             Show the help screen
 
 == TODO (unprioritized)
 * Add configuration screen to customize keystrokes, colors, etc.
