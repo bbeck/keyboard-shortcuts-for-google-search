@@ -1,4 +1,5 @@
 var chevronImageUrl = chrome.extension.getURL("images/chevron.gif");
+var helpPopupUrl = chrome.extension.getURL("html/help.html");
 
 /** Move the selection to the next search result. */
 var doNextSearchResult = function() {
@@ -66,6 +67,51 @@ var doNavigate = function() {
   window.location.href = link.attr("href")
 };
 
+/** Show the help popup. */
+var doShowHelp = function() {
+  var popup = $("<span></span>");
+  
+  // Callback for closing the popup
+  var closePopup = function(event, keyupHandler) {
+    // Remove the keyboard handler
+    $(document.documentElement).unbind("keyup", keyupHandler);
+    
+    // And restore the main one
+    bindKeyboardHandler();
+    
+    // And then close the popup
+    popup.remove();
+    
+    // Nothing else needs to see this event
+    event.stopPropagation();
+    event.preventDefault();
+  };
+  
+  var keyupHandler = function(event) {
+    // Escape
+    if (event.which == 27) {
+      closePopup(event, keyupHandler);
+    }
+  };
+  
+  // Load the help html, when finished bind the handlers to close it
+  popup.load(helpPopupUrl, function() {
+    // Now that the popup is up, remove the main keyboard handler...
+    unbindKeyboardHandler();
+    
+    // And replace it with one that will close the popup...
+    $(document.documentElement).bind("keyup", keyupHandler);
+    
+    // Find the close button and bind a click hander to it...
+    var closeButton = $(popup).find("a.cgsk-popup-close-button");
+    closeButton.bind("click", function(event) {
+      closePopup(event, keyupHandler);
+    });
+  });
+  
+  $("body").append(popup);
+};
+
 /** Inserts a chevron image next to the given search result. */
 var addChevron = function(item) {
   var itemPosition = item.position();
@@ -90,7 +136,7 @@ var removeChevron = function(item) {
 };
 
 /** Handles keypresses. */
-var keyboardHandler = function(event) {
+var keypressHandler = function(event) {
   debug("keypress: " + event.which);
   
   // return
@@ -111,6 +157,7 @@ var keyboardHandler = function(event) {
   
   // question mark
   if (event.which == 63) {
+    doShowHelp();
     return;
   }
   
@@ -134,19 +181,23 @@ var keyboardHandler = function(event) {
  */
 var keyupHandler = function(event) {
   event.which = event.keyCode;
-  if (event.which == 27) keyboardHandler(event);  
+  if (event.which == 27) keypressHandler(event);  
 };
 
 /** Bind the keyboard handler. */
 var bindKeyboardHandler = function() {
-  $(document.documentElement).bind("keypress", keyboardHandler);
-  $(document.documentElement).bind("keyup", keyupHandler);
+  $(document.documentElement).bind({
+    keypress: keypressHandler,
+    keyup: keyupHandler
+  });
 };
 
 /** Unbind the keyboard handler. */
 var unbindKeyboardHandler = function() {
-  $(document.documentElement).unbind("keypress", keyboardHandler);
-  $(document.documentElement).unbind("keyup", keyupHandler);
+  $(document.documentElement).unbind({
+    keypress: keypressHandler,
+    keyup: keyupHandler
+  });
 };
 
 /** Enable or disable keyboard support depending on whether or not the search box has focus. */

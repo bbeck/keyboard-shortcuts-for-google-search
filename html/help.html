@@ -1,0 +1,159 @@
+<span>
+  <!-- Layout and positioning -->
+  <style type="text/css">
+    .cgsk-backdrop {
+      position: fixed;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .cgsk-popup {
+      position: fixed;
+      top: 25%;
+      left: 32%;
+      width: 36%;
+      padding: 15px 10px;
+      z-index: 1001;
+      -webkit-border-radius: 10px;
+    }
+
+    .cgsk-popup table {
+      width: 100%;
+    }
+
+    .cgsk-popup-column-header {
+      padding-top: 15px;
+      padding-left: 2px;
+    }
+
+    .cgsk-popup-close-button {
+      position: absolute;
+      right: 10px;
+    }
+
+    .cgsk-popup-column {
+      vertical-align: top;
+    }
+
+    .cgsk-popup-description {
+      padding-left: 2px;
+    }
+  </style>
+
+  <!-- Formatting, fonts, colors, etc. -->
+  <style type="text/css">
+    .cgsk-popup table { 
+      color: inherit; 
+    }
+
+    .cgsk-backdrop {
+      background-color: black;
+      opacity: 0.20;
+    }
+
+    .cgsk-popup {
+      background-color: black;
+      color: white;
+      opacity: .85;
+
+      font-family: arial,sans-serif;
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    .cgsk-popup-title {
+      border-bottom: 1px solid #999;
+      color: yellow;
+    }
+
+    a.cgsk-popup-close-button {
+      text-decoration: none;
+      color: yellow;
+    }
+
+    .cgsk-popup-column table {
+      font-family: arial,sans-serif;
+      font-weight: bold;
+      font-size: 80%;
+    }
+
+    .cgsk-popup td {
+      font-weight: bold;
+    }
+
+    .cgsk-popup-column-header {
+      color: yellow;
+    }
+
+    .cgsk-popup-key {
+      text-align: right;
+    }
+
+    .cgsk-popup-mnemonic {
+      color: yellow;
+      font-family: courier new;
+      font-weight: bold;
+    }
+  </style>
+
+  <div class="cgsk-backdrop"></div>
+  <div class="cgsk-popup">
+    <div class="cgsk-popup-title">Keyboard shortcuts <a class="cgsk-popup-close-button" href="#">Close</a></div>
+    <div class="cgsk-popup-content">
+      <table>
+          <tr>
+            <td class="cgsk-popup-column">
+              <table>
+                  <tr>
+                    <td></td>
+                    <td class="cgsk-popup-column-header">Navigation</td>
+                  </tr>
+                  <tr>
+                    <td class="cgsk-popup-key"><span class="cgsk-popup-mnemonic">j</span> or <span class="cgsk-popup-mnemonic">J</span> :</td>
+                    <td class="cgsk-popup-description">Select next search result</td>
+                  </tr>
+                  <tr>
+                    <td class="cgsk-popup-key"><span class="cgsk-popup-mnemonic">k</span> or <span class="cgsk-popup-mnemonic">K</span> :</td>
+                    <td class="cgsk-popup-description">Select previous search result</td>
+                  </tr>
+                  <!--
+                  <tr>
+                    <td class="cgsk-popup-key"><span class="cgsk-popup-mnemonic">n</span> or <span class="cgsk-popup-mnemonic">N</span> :</td>
+                    <td class="cgsk-popup-description">Move to next page of results</td>
+                  </tr>
+                  <tr>
+                    <td class="cgsk-popup-key"><span class="cgsk-popup-mnemonic">p</span> or <span class="cgsk-popup-mnemonic">P</span> :</td>
+                    <td class="cgsk-popup-description">Move to previous page of results</td>
+                  </tr>
+                  -->
+              </table>
+            </td>
+            <td class="cgsk-popup-column">
+              <table>
+                  <tr>
+                    <td></td>
+                    <td class="cgsk-popup-column-header">Actions</td>
+                  </tr>
+                  <tr>
+                    <td class="cgsk-popup-key"><span class="cgsk-popup-mnemonic">enter</span> :</td>
+                    <td class="cgsk-popup-description">Navigate to selected search result</td>
+                  </tr>
+                  <tr>
+                    <td class="cgsk-popup-key"><span class="cgsk-popup-mnemonic">/</span> or <span class="cgsk-popup-mnemonic">esc</span> :</td>
+                    <td class="cgsk-popup-description">Focus on search text box</td>
+                  </tr>
+                  <tr>
+                    <td class="cgsk-popup-key"><span class="cgsk-popup-mnemonic">?</span> :</td>
+                    <td class="cgsk-popup-description">Open keyboard shortcut help</td>
+                  </tr>
+              </table>
+            </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</span>
