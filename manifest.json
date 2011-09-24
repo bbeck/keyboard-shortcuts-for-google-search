@@ -2,7 +2,14 @@
   "name": "Google Search Keyboard Shortcuts",
   "version": "0.1",
   "description": "Adds keyboard shortcuts to Google search result pages.",
-
+  "homepage_url": "http://github.com/bbeck/chrome-google-search-keyboard",
+  
+  "icons": { 
+     "16": "icon/icon-16.png",
+     "48": "icon/icon-48.png",
+    "128": "icon/icon-128.png"
+  },
+            
   "content_scripts": [
     {
       "matches": ["http://www.google.com/search*"],
