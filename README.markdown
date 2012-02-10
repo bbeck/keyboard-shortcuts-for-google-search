@@ -1,6 +1,8 @@
-Google Search Keyboard Shortcuts
-================================
-A chrome extension that enables keyboard shortcuts for navigating Google search results. This extension mimics the functionality of the old Google keyboard shortcuts experiment that has been discontinued.
+Keyboard Shortcuts for Google Search™
+=====================================
+A chrome extension that enables keyboard shortcuts for navigating Google search results. 
+This extension mimics the functionality of the old Google keyboard shortcuts experiment 
+that has been discontinued.
 
 ### Keyboard Shortcuts
 <table>
@@ -29,6 +31,10 @@ A chrome extension that enables keyboard shortcuts for navigating Google search 
     <td>Navigate to the selected search result</td>
   </tr>
   <tr>
+    <td>&lt;shift-enter&gt;</td>
+    <td>Navigate to the selected search result</td>
+  </tr>
+  <tr>
     <td>?</td>
     <td>Show the help screen</td>
   </tr>
@@ -42,6 +48,6 @@ A chrome extension that enables keyboard shortcuts for navigating Google search 
 * If you hit next on the last item of a page or prev on the first item of a page switch pages?
 * What to do when the search button has focus and movement happens or enter/esc is pushed?
 * Add Google Analytics tracking to better understand the size of the userbase.
-* Command+Enter, Control+Enter open result in new tab?  Another shortcut for new window?
+* Shortcut for new window?
 * g-w Go to web search, g-i Go to image search, etc.  Even on google home page.
 * Remember which item/page was selected if you choose to navigate to one and then hit the back button.
