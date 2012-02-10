@@ -88,10 +88,18 @@ var doFocusSearchBox = function() {
 /** Navigate to the selected search result. */
 var doNavigate = function() {
   var selectedItem = $("li.selected_search_item");
-  var link = $(selectedItem).find("h3 a")
+  var link = $(selectedItem).find("h3 a");
   
-  window.location.href = link.attr("href")
+  window.location.href = link.attr("href");
 };
+
+/** Navigate to the selected search result, opening a new tab. */
+var doNavigateNewTab = function() {
+  var selectedItem = $("li.selected_search_item");
+  var link = $(selectedItem).find("h3 a");
+  
+  window.open(link.attr("href"), "_blank");
+}
 
 /** Show the help popup. */
 var doShowHelp = function() {
@@ -140,9 +148,12 @@ var doShowHelp = function() {
 
 /** Inserts a chevron image next to the given search result. */
 var addChevron = function(item) {
+  // Check to see if the item has a personal results icon next to it
+  var hasPersonalResultsIcon = $(item).find("span.spri").length > 0;
+  
   var itemPosition = item.position();
   var top = itemPosition.top + 4;
-  var left = itemPosition.left - 15;
+  var left = itemPosition.left - (hasPersonalResultsIcon ? 30 : 15);
   var html = "<img " + 
     "id='selected_search_item_chevron' " +
     "src='" + chevronImageUrl + "' " + 
@@ -164,6 +175,12 @@ var removeChevron = function(item) {
 /** Handles keypresses. */
 var keypressHandler = function(event) {
   debug("keypress: " + event.which);
+  
+  // shift-return
+  if (event.which == 13 && event.shiftKey) {
+    doNavigateNewTab();
+    return;
+  }
   
   // return
   if (event.which == 13) {
