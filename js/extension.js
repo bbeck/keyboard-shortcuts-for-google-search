@@ -257,7 +257,7 @@ var unbindKeyboardHandler = function() {
 
 /** Enable or disable keyboard support depending on whether or not the search box has focus. */
 var bindSearchBoxFocusHandler = function() {
-  var searchBox = $("input[title=Search]:first");
+  var searchBox = $("input[name=q]:first");
   
   // When the search box gets focus, remove our keyboard handler.
   $(searchBox).bind("focus", unbindKeyboardHandler);
