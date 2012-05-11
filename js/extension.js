@@ -178,13 +178,13 @@ var keypressHandler = function(event) {
   debug("keypress: " + event.which);
   
   // shift-return
-  if (event.which == 13 && event.shiftKey) {
+  if ((event.which == 13 || event.which == 10) && event.altKey) {
     doNavigateNewTab();
     return;
   }
   
   // return
-  if (event.which == 13) {
+  if (event.which == 13 || event.which == 10) {
     doNavigate();
     return;
   }
