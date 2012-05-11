@@ -23,5 +23,9 @@
         "js/extension.js"
       ]
     }
-  ]
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  }
 }

@@ -97,8 +97,9 @@ var doNavigate = function() {
 var doNavigateNewTab = function() {
   var selectedItem = $("li.selected_search_item");
   var link = $(selectedItem).find("h3 a");
-  
-  window.open(link.attr("href"), "_blank");
+  var href = link.attr("href");
+
+  chrome.extension.sendRequest({ "url" : href });
 }
 
 /** Show the help popup. */
