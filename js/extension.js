@@ -99,7 +99,7 @@ var doNavigateNewTab = function() {
   var link = $(selectedItem).find("h3 a");
   var href = link.attr("href");
 
-  chrome.extension.sendRequest({ "url" : href });
+  chrome.extension.sendRequest({ navigate: { url: href } });
 }
 
 /** Show the help popup. */
