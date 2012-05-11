@@ -12,7 +12,10 @@
             
   "content_scripts": [
     {
-      "matches": ["*://www.google.com/search*"],
+      "matches": [
+        "*://www.google.com/search*",
+        "*://www.google.ru/search*"
+      ],
       "js": [
         "lib/jquery-1.6.4.min.js",
         "js/logging.js",
@@ -20,5 +23,11 @@
         "js/extension.js"
       ]
     }
-  ]
+  ],
+
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  }
 }
