@@ -1,4 +1,5 @@
 {
+  "manifest_version": 2,
   "name": "Keyboard Shortcuts for Google Search™",
   "version": "0.1.1",
   "description": "Adds keyboard shortcuts to Google search result pages.",
