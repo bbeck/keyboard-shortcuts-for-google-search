@@ -10,6 +10,10 @@
      "48": "icon/icon-48.png",
     "128": "icon/icon-128.png"
   },
+
+  "web_accessible_resources": [
+    "images/chevron.gif"
+  ],
             
   "content_scripts": [
     {
