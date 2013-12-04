@@ -81,7 +81,7 @@ var doPrevSearchPage = function() {
 
 /** Give the search box focus. */
 var doFocusSearchBox = function() {
-  var searchBox = $("input[title=Search]:first");
+  var searchBox = $("input[name=q]");
   searchBox.focus();
 };
 
